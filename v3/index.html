@@ -13,14 +13,13 @@
     <a-scene
       vr-mode-ui="enabled: false"
       embedded
-      arjs="sourceType: webcam; debugUIEnabled: false;"
-    >
+       arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+    <a-camera gps-camera="minDistance: 40;" rotation-reader></a-camera>
       <a-box
         look-at="[gps-camera]"
         scale="150 150 150"
         gps-entity-place="latitude: 53.225621; longitude: 44.921702;"
       ></a-box>
-      <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
 </html>
