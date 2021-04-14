@@ -6,7 +6,7 @@ function loadPlaces(position) {
         clientSecret: '<your-client-secret>',
         version: '20300101',    // foursquare versioning, required but unuseful for this demo
     };
-
+debugger;
     // CORS Proxy to avoid CORS problems
     const corsProxy = 'https://cors-anywhere.herokuapp.com/';
 
@@ -22,6 +22,7 @@ function loadPlaces(position) {
         .then((res) => {
             return res.json()
                 .then((resp) => {
+                debugger;
                     return resp.response.venues;
                 })
         })
@@ -36,7 +37,7 @@ window.onload = () => {
 
     // first get current user location
     return navigator.geolocation.getCurrentPosition(function (position) {
-
+debugger;
         // than use it to load from remote APIs some places nearby
         loadPlaces(position.coords)
             .then((places) => {
@@ -49,7 +50,7 @@ window.onload = () => {
                     placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     placeText.setAttribute('title', place.name);
                     placeText.setAttribute('scale', '15 15 15');
-                    
+debugger;                    
                     placeText.addEventListener('loaded', () => {
                         window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
                     });
