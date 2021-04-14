@@ -21,7 +21,7 @@ debugger;
     return fetch(endpoint, {
     headers: {
         'Access-Control-Allow-Origin': '*'
-    })
+    }})
         .then((res) => {
             return res.json()
                 .then((resp) => {
